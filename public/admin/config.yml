@@ -48,27 +48,6 @@ collections:
     editor:
       preview: false
     files:
-      - name: "authors"
-        label: "Authors"
-        file: "meta/authors.yml"
-        description: "Author descriptions"
-        fields:
-          - name: authors
-            label: Authors
-            label_singular: "Author"
-            widget: list
-            fields:
-              - label: "Slug"
-                name: "slug"
-                widget: "string"
-                hint: "The part of a URL identifies the author"
-              - label: "Name"
-                name: "name"
-                widget: "string"
-                hint: "First and Last"
-              - label: "Introduction"
-                name: "introduction"
-                widget: "text"
       - name: "tags"
         label: "Tags"
         file: "meta/tags.yml"
@@ -110,16 +89,6 @@ collections:
         format: "YYYY-MM-DD"
         dateFormat: "YYYY-MM-DD"
         timeFormat: false
-      - label: Author
-        name: "author"
-        widget: relation
-        collection: "meta"
-        file: "authors"
-        searchFields:
-          - "authors.*.name"
-        displayFields:
-          - "authors.*.name"
-        valueField: "authors.*.slug"
       - label: Tags
         label_singular: "Tag"
         name: "tags"
@@ -139,3 +108,6 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+      - label: "Cover Photo"
+        name: "coverPhoto"
+        widget: "image"
